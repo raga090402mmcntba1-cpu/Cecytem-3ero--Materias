@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pensamiento Matemático</title>
+    <a href="Materias_Cecytem.html" class="btn-regresar">⬅ Regresar al inicio</a>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg,
+                #5a0000 0%,
+                #b11226 35%,
+                #ff4d4d 70%,
+                #ffd6d6 100%);
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(255,255,255,0.95);
+            text-align: center;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 38px;
+            color: #5a0000;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #b11226;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .contenedor {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 0;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #b11226;
+        }
+
+        .imagenes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .imagenes img {
+            width: 280px;
+            border-radius: 10px;
+            border: 4px solid #b11226;
+        }
+
+        .pdfs a {
+            display: block;
+            margin: 12px 0;
+            color: #5a0000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .pdfs a:hover {
+            text-decoration: underline;
+        }
+
+        .video {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        footer {
+            background-color: rgba(255,255,255,0.95);
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="fechaHora"></p>
+
+<script>
+function actualizarFechaHora() {
+    const ahora = new Date();
+    const opciones = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    };
+    document.getElementById("fechaHora").textContent =
+        "Fecha y hora: " + ahora.toLocaleDateString("es-MX", opciones);
+}
+
+actualizarFechaHora();
+setInterval(actualizarFechaHora, 1000);
+</script>
+
+<p id="contadorVisitas"></p>
+
+<script>
+let visitas = localStorage.getItem("contadorVisitas");
+
+if (visitas === null) {
+    visitas = 1;
+} else {
+    visitas = parseInt(visitas) + 1;
+}
+
+localStorage.setItem("contadorVisitas", visitas);
+
+document.getElementById("contadorVisitas").textContent =
+    "Número de visitas: " + visitas;
+</script>
+
+<header>
+    <h1>Pensamiento Matemático</h1>
+    <p>Asignatura del 3er Semestre | CECYTEM</p>
+
+    <nav>
+        <a href="#descripcion">Descripción</a>
+        <a href="#contenidos">Temas vistos en Clase</a>
+        <a href="#imagenes">Trabajos de Proyectos</a>
+        <a href="#video">Video TVI (Explicacion)</a>
+        <a href="#pdf">Ejercicios Realizados</a>
+    </nav>
+</header>
+
+<div class="contenedor">
+
+    <section id="descripcion" class="card">
+        <h2>Descripción de la Materia</h2>
+        <p>
+            En la materia de Pensamiento Matemático aprendemos a entender cómo cambian las cosas usando las matemáticas. 
+            Analizar situaciones como el tiempo, la distancia y la altura, y cómo varían con el paso del tiempo.
+             Con las tasas de variación y las derivadas, podemos saber qué tan rápido cambia algo en un instante.
+También estudiamos funciones, sus intervalos, límites y concavidad, lo que me ayuda a interpretar gráficas y su comportamiento.
+ Uso herramientas como la regla de la cadena, los logaritmos, y las funciones exponenciales y trigonométricas para resolver
+ problemas reales de forma más sencilla.
+Esta materia ayuda a pensar mejor, razonar con lógica y ver las matemáticas como algo útil y presente en la vida diaria.</p>
+    </section>
+
+    <section id="contenidos" class="card">
+        <h2>Temas vistos en Clase</h2>
+        <ul>
+            <li>Tiempo Distancia y Altura</li>
+            <li>Tasa de Variacion Instantanea</li>
+            <li>Intervalos</li>
+            <li>Operaciones con Funciones</li>
+            <li>Derivadas con Funciones</li>
+            <li>Limites (Evitables y Inevitables), Concavidad,</li>
+            <li>Regla de la Cadena</li>
+            <li>Logaritmno, Logaritmno Natural</li>
+            <li>Derivadas Funciones Exponenciales Trigonometricas</li>
+        </ul>
+    </section>
+
+    <section id="imagenes" class="card">
+        <h2>Trabajos de Proyectos</h2>
+        <div class="imagenes">
+            <img src="mate1.jpg" alt="Ejercicios matemáticos">
+            <img src="mate2.jpg" alt="Resolución de problemas">
+            <img src="mate3.jpg" alt="Actividades en clase">
+            <img src="flor.jpg" alt="Actividades en clase">
+        </div>
+    </section>
+
+   <section id="video" class="card">
+    <h2>Tasa de Variacion Instantanea (Explicacion)</h2>
+    <p>
+        AQUI ES UNA PEQUEÑA EXPLICACION SOBRE LA TVI :) (ESPERO LES SIRVA<3)
+    </p>
+
+    <div class="video-contenedor">
+        <video controls>
+            <source src="WhatsApp Video 2026-01-05 at 3.04.08 AM.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+
+    <section id="pdf" class="card">
+        <h2>Ejercicios Realizados</h2>
+        <div class="pdfs">
+            <a href="1er Parcial..pdf" target="_blank">📄 Ejercicios 1er Parcial</a>
+            <a href="2parcial.pdf" target="_blank">📄 Ejercicios 2do Parcial</a>
+            <a href="1er Parcial..pdf" target="_blank">📄 Ejercicios 3er Parcial</a>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    © 2025 Pensamiento Matemático | CECYTEM
+</footer>
+
+</body>
+</html>

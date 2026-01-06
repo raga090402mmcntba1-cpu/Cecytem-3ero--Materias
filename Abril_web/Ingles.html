@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inglés</title>
+     <a href="Materias_Cecytem.html" class="btn-regresar">⬅ Regresar al inicio</a>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg,
+                #0a2a66 0%,
+                #1e4fd8 40%,
+                #4fa3ff 75%,
+                #b3ddff 100%);
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(255,255,255,0.95);
+            text-align: center;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 38px;
+            color: #0a2a66;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e4fd8;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .contenedor {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 0;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #1e4fd8;
+        }
+
+        .imagenes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .imagenes img {
+            width: 280px;
+            border-radius: 10px;
+            border: 4px solid #1e4fd8;
+        }
+
+        .pdfs a {
+            display: block;
+            margin: 12px 0;
+            color: #0a2a66;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .pdfs a:hover {
+            text-decoration: underline;
+        }
+
+        
+
+        footer {
+            background-color: rgba(255,255,255,0.95);
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            border-radius: 10px;
+        }
+        .video-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.video-contenedor video {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 15px;
+    border: 5px solid #1e4fd8;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <p id="fechaHora"></p>
+
+<script>
+function actualizarFechaHora() {
+    const ahora = new Date();
+    const opciones = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    };
+    document.getElementById("fechaHora").textContent =
+        "Fecha y hora: " + ahora.toLocaleDateString("es-MX", opciones);
+}
+
+actualizarFechaHora();
+setInterval(actualizarFechaHora, 1000);
+</script>
+
+<p id="contadorVisitas"></p>
+
+<script>
+let visitas = localStorage.getItem("contadorVisitas");
+
+if (visitas === null) {
+    visitas = 1;
+} else {
+    visitas = parseInt(visitas) + 1;
+}
+
+localStorage.setItem("contadorVisitas", visitas);
+
+document.getElementById("contadorVisitas").textContent =
+    "Número de visitas: " + visitas;
+</script>
+
+<header>
+    <h1>Inglés</h1>
+    <p>Asignatura del 3er Semestre | CECYTEM</p>
+
+    <nav>
+        <a href="#descripcion">Descripción</a>
+        <a href="#temasvistosenclase">Temas vistos en clase </a>
+        <a href="Spelling Be">AMTRAKA</a>
+        <a href="#imagenes">Trabajos de Proyectos</a>
+        <a href="#pdf">Trabajos Realizados</a>
+        
+    </nav>
+</header>
+
+<div class="contenedor">
+
+    <section id="descripcion" class="card">
+        <h2>Descripción de la Materia</h2>
+        <p>
+            La asignatura de Inglés tiene como objetivo desarrollar las habilidades
+            básicas de comprensión y expresión del idioma, tanto de forma oral como
+            escrita. A lo largo del semestre, se fortalecen aspectos como la lectura,
+            la escritura, la pronunciación y el uso correcto de estructuras gramaticales.
+        </p>
+        <p>
+            Durante el curso, se realizan actividades prácticas que permiten aplicar
+            el idioma en situaciones cotidianas, favoreciendo una comunicación clara
+            y funcional.
+        </p>
+    </section>
+
+    <section id="temasvistosenclase" class="card">
+        <h2>Temas vistos en Clase </h2>
+        <ul>
+            <li>Classroom Rules</li>
+            <li>Conections of Sequence (linking ideas)</li>
+            <li>Would Like | Would Like to</li>
+            <li>Stative Verbs</li>
+            <li>Present Continuous Tense (Key Words)</li>
+            <li>Simple Past Time</li>
+            <li>Verbs (Inf Present Tense, Past Tense, Past Participle, Gerund)</li>
+        </ul>
+    </section>
+
+    <section id="video" class="card">
+    <h2>Spelling Bee</h2>
+    <p>
+        APRENDE A USAR LAS ESTRUCTURAS GRAMATICALES EN UNA CANCION. 
+    </p>
+
+    <div class="video-contenedor">
+        <video controls>
+            <source src="WhatsApp Video 2026-01-05 at 3.13.24 AM.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+
+    <section id="imagenes" class="card">
+        <h2>Trabajos de Proyectos</h2>
+        <div class="imagenes">
+            <img src="WhatsApp Image 2026-01-04 at 4.05.53 PM (1).jpeg" alt="Trabajo de inglés">
+            <img src="WhatsApp Image 2026-01-04 at 4.05.53 PM (2).jpeg"alt="Ejercicios de inglés">
+            <img src="WhatsApp Image 2026-01-04 at 4.05.53 PM.jpeg" alt="Actividades en clase">
+        </div>
+    </section>
+
+
+    <section id="pdf" class="card">
+        <h2>Trabajos Realizados</h2>
+        <div class="pdfs">
+            <a href="Rules..pdf" target="_blank">📄 Rules Classroom</a>
+            <a href="Simple (Past, Present.).pdf" target="_blank">📄 Simple (Past, Present)</a>
+            <a href="Conectores..pdf" target="_blank">📄 Conectores</a>
+        </div>
+    </section>
+
+</div>
+
+
+<footer>
+    © 2025 Inglés | CECYTEM
+</footer>
+
+</body>
+</html>

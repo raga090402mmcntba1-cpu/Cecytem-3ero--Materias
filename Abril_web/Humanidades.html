@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Humanidades</title>
+    <a href="Materias_Cecytem.html" class="btn-regresar">⬅ Regresar al inicio</a>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg,
+                #4a148c 0%,
+                #7b1fa2 35%,
+                #ba68c8 70%,
+                #ede7f6 100%);
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(255,255,255,0.95);
+            text-align: center;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #6a1b9a;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #6a1b9a;
+            font-weight: bold;
+            margin: 0 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .contenedor {
+            max-width: 1100px;
+            margin: auto;
+            padding-top: 30px;
+        }
+
+        .seccion {
+            background-color: white;
+            border-radius: 16px;
+            padding: 26px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.18);
+        }
+
+        .seccion h2 {
+            margin-top: 0;
+            color: #6a1b9a;
+        }
+
+        .imagenes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .imagenes img {
+            width: 260px;
+            border-radius: 12px;
+            border: 4px solid #7b1fa2;
+        }
+
+        .pdfs a {
+            display: block;
+            margin: 12px 0;
+            color: #6a1b9a;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .pdfs a:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 12px;
+        }
+
+
+        footer {
+            background-color: rgba(255,255,255,0.95);
+            text-align: center;
+            padding: 15px;
+            border-radius: 14px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="fechaHora"></p>
+
+<script>
+function actualizarFechaHora() {
+    const ahora = new Date();
+    const opciones = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    };
+    document.getElementById("fechaHora").textContent =
+        "Fecha y hora: " + ahora.toLocaleDateString("es-MX", opciones);
+}
+
+actualizarFechaHora();
+setInterval(actualizarFechaHora, 1000);
+</script>
+
+<p id="contadorVisitas"></p>
+
+<script>
+let visitas = localStorage.getItem("contadorVisitas");
+
+if (visitas === null) {
+    visitas = 1;
+} else {
+    visitas = parseInt(visitas) + 1;
+}
+
+localStorage.setItem("contadorVisitas", visitas);
+
+document.getElementById("contadorVisitas").textContent =
+    "Número de visitas: " + visitas;
+</script>
+
+<header>
+    <h1>Humanidades</h1>
+    <p>Asignatura del 3er Semestre | CECYTEM</p>
+
+    <nav>
+        <a href="#definicion">Definicion de la Materia</a>
+        <a href="#importancia">Temas Vistos en Clase</a>
+        <a href="#imagenes">Trabajos mas Relevantes</a>
+        <a href="#pdf">Proyectos</a>
+        <a href="#cuestionario">Cuestionario</a>
+    </nav>
+</header>
+
+<div class="contenedor">
+
+    <section id="definicion" class="seccion">
+        <h2>Definicion de la Materia</h2>
+<p>En la materia de Humanidades el aprendizaje se desarrolla a través del análisis y la reflexión sobre la organización
+ social y política. Durante el curso se estudiaron conceptos como política y contrato social, lo que permite comprender
+  cómo surgen las normas y acuerdos que regulan la convivencia en la sociedad.
+A lo largo de la materia se compararon distintas formas de gobierno, como el totalitarismo, la democracia y la oligarquía,
+ para identificar sus características y efectos en la vida social. También se abordaron temas como poder, esclavitud, 
+ sometimiento y civilidad, fomentando una reflexión crítica sobre la libertad, la autoridad y los derechos humanos.
+Finalmente, se analiza la relación entre la sociedad civil y las instituciones, fortaleciendo el pensamiento crítico
+ y la comprensión de cómo las decisiones políticas influyen en la vida cotidiana. </p>
+    </section>
+
+    <section id="importancia" class="seccion">
+        <h2>Temas Vistos en Clase</h2>
+        <ul>
+            <li>Politica | Contrato Social</li>
+            <li>Totalitarismo | Democracia</li>
+            <li>Poder | Esclavitud</li>
+            <li>Sometimiento | Civilidad</li>
+            <li>Sociedad civil | Institucion</li>
+            <li>Oligarquia</li>
+        </ul>
+    </section>
+
+    <section id="imagenes" class="seccion">
+        <h2>Trabajos mas Relevantes</h2>
+        <div class="imagenes">
+            <img src="esclavitud y sometimiento.jpg" alt="Esclavitud y Sometimiento">
+            <img src="politica.jpg" alt="Historia y cultura">
+            <img src="Instituciones.jpg" alt="Análisis humanista">
+            <img src="imaginario social.jpg" alt="Reflexión filosófica">
+            <img src="Ascenso y Consolidacion.jpg" alt="Historia y cultura">
+            <img src="ambiental.jpg" alt="Análisis humanista">
+        </div>
+    </section>
+
+
+    <section id="pdf" class="seccion">
+        <h2>Proyectos</h2>
+        <div class="pdfs">
+            <a href="Bienestar estudiantil_20260104_190442_0000.pdf" target="_blank">📄 Bienestar Estudiantil</a>
+            <a href="El poder en la obra de Hobbes y Weber_20251009_091230_0000.pdf" target="_blank">📄 Obra de Hobbes y Weber</a>
+            <a href="Es la actividad que se realiza entre seres humanos- sin objeto material com_20251207_105501_0000.pdf" target="_blank">📄 Actividad entre Seres Humanos</a>
+        </div>
+    </section>
+
+    <section id="formulario" class="seccion">
+        <h2>Formulario</h2>
+        <p>
+            A continuación se muestra un formulario para recopilar opiniones
+            o evidencias relacionadas con la materia.
+        </p>
+
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSc15nB7hx0-i0npaEaiMl1MQvTgs2nh1ZH2LEhMFpVIA-a9Eg/viewform?usp=header">
+        </iframe>
+    </section>
+
+</div>
+
+
+</div>
+
+<footer>
+   © 2025 Humanidades  | CECYTEM
+</footer>
+
+</body>
+</html>
